@@ -14,10 +14,14 @@ pipeline{
                 branch:'master'
             }
             stage('Build the code'){
-                sh script:'mvn clean package'
+              steps{
+                   sh script:'mvn clean package'
+              } 
             }
             stage('reporting'){
-                junit testResults: 'target/surefire-reports/*.xml'
+                steps{
+                     junit testResults: 'target/surefire-reports/*.xml'
+                } 
 
             }
         }
