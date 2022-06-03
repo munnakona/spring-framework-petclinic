@@ -1,4 +1,4 @@
-pipeline{
+Pipeline{
     agent{label 'build_java_11'}
     options{
         timeout(time: 1, unit: 'HOURS')
